@@ -3,7 +3,9 @@ import math
 import io
 import sys
 
-from EX1 import Q1, Q2, Q3
+import Q3
+import Q2
+import Q1
 
 
 def f1(x: int, y: float, z):
