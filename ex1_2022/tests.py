@@ -3,9 +3,7 @@ import math
 import io
 import sys
 
-import Q3
-import Q2
-import Q1
+from ex1_2022 import Q1, Q2, Q3
 
 
 def f1(x: int, y: float, z):
