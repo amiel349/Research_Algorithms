@@ -57,6 +57,3 @@ def read_and_write_gspread(url):
 # if __name__ == '__main__':
 #     read_and_write_gspread('https://docs.google.com/spreadsheets/d/13Sr8vQ5QJ3T7oa71SDBc2_SRtg-YXt8sl9wzfuNrIqo/edit#gid=0')
 
-
-
-
