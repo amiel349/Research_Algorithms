@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Maximum Weight Fractional Matching</title>
+</head>
+<body>
+<h1 style="text-align:center">Welcome To The Maximum Weight Fractional Matching algorithm Site!</h1>
+<h4 style="text-align:center"> In this site you can run the Maximum Weight Fractional Matching algorithm.</h4>
+<h4 style="text-align:center"> There are two ways to run the algorithm</h4>
+<h4 style="text-align:center"> The first one is using a random graph</h4>
+<h4 style="text-align:center"> The second one is using a google sheet to describe your graph</h4>
+<center>
+    <p><b> if you want to run the algorithm using a google sheets</b></p>
+    <form method="POST" action="">
+        <p> Please enter the URL of your google sheets here:</p>
+        {{ form.csrf_token }}
+        <p>{{ sheets.url() }}</p>
+        {% if sheets.url.errors %}
+            <ul class="errors">
+                {% for error in sheets.url.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p><input type="submit" value="Launch"></p>
+    </form>
+
+    <p><b> if you want to run the algorithm with a random graph </b></p>
+    <form method="POST" action="">
+        <p> Please enter the number of nodes here:</p>
+        {{ form.csrf_token }}
+        <p>
+            {{ form.nodes() }}
+        </p>
+
+        {% if form.nodes.errors %}
+            <ul class="errors">
+                {% for error in form.nodes.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p> Please enter the probability of every two edges:</p>
+        <p>
+            {{ form.p() }}
+        </p>
+        {% if form.p.errors %}
+            <ul class="errors">
+                {% for error in form.p.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p><input type="submit" value="Launch"></p>
+    </form>
+
+   <!-- <form action="/result">
+  <input type="submit" value="Try random graph algorithm">-->
+    {% block content %}
+        {% endblock %}
+    {% block result %}
+        {% endblock %}
+
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">About NetworkX</button>
+       <div id="demo" class="collapse">
+           NetworkX is a Python package for the creation,<br>
+           manipulation, and study of the structure,<br>
+           dynamics, and functions of complex networks.<br>
+           <a href="networkx-documentation" class="btn btn-link" role="button">More about networkx</a>
+       </div>
+<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo2">Algorithm code</button>
+       <div id="demo2" class="collapse">
+           A fractional graph is a graph in which every edge has a fraction [0,1]<br>
+           such that the sum of fractions of edges adjacent to each vertex is at most 1.<br>
+           A matching is a set of edges that do not share any nodes.<br>
+           Define fw(e) for each edge e to be the multiplication of its weight and fraction.<br>
+           A maximum-weight fractional matching is one with the maximum fw(e) sum of all e in E(G).<br>
+
+           A fractional matching of maximum weight in a graph can be found by linear programming.<br>
+
+           *If the edges are not weighted - the weight of each edge is 1.<br>
+           <a href="git-ola" class="btn btn-link" role="button">Algorithm Code</a>
+
+       </div>
+    </center>
+<marquee  behavior="scroll" direction="right">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgfiatWuS9XqC2IpwOS6-I4IwGbeC7ghdm5w&usqp=CAU" alt="networkx" width="460" height="345">
+    </marquee>
+</body>
+</html>
