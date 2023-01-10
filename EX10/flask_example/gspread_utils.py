@@ -4,7 +4,7 @@ from EX10.flask_example.algo import maximum_weight_fractional_matching
 
 
 def read_and_write_gspread(url):
-    account = gspread.service_account(r'C:\Users\amiel\PycharmProjects\Research_Algorithms\EX10\flask_example\credentials.json')
+    account = gspread.service_account('../credentials.json')
     try:
         spreadsheet = account.open_by_url(url)
     except Exception as e:

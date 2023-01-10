@@ -1,8 +1,7 @@
 
 from flask_wtf import FlaskForm
-from wtforms import (StringField, TextAreaField, IntegerField, BooleanField,
-                     RadioField, FloatField)
-from wtforms.validators import InputRequired, ValidationError, NumberRange, URL
+from wtforms import (StringField,IntegerField,FloatField)
+from wtforms.validators import InputRequired, ValidationError, URL
 
 
 def positive_check(form, field):

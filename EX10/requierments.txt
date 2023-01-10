@@ -1,0 +1,6 @@
+flask
+networkx
+gspread
+scipy
+wtforms
+numpy

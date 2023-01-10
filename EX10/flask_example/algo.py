@@ -1,4 +1,3 @@
-import random
 import numpy as np
 import networkx as nx
 from networkx import incidence_matrix
